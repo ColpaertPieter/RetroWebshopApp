@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Retro Tv",
+    "price": 300,
+    "description":
+      "Kijk tv zoals in de bioscoop, ongezien veel kleuren voor een avond vol plezier",
+    "imageUrl": "https://images.unsplash.com/photo-1573399054516-90665ecc44be?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075",
+    "category": "Video"
+  },
+  {
+    "name": "Retro Camera",
+    "price": 70,
+    "description":
+      "Maak foto's van ongezien kwaliteit, enkele minuten later heb je reeds je resultaat",
+    "imageUrl": "https://images.unsplash.com/photo-1543068755-df93a9dd63b4?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170",
+    "category": "Video"
+  },
+  {
+    "name": "Retro Computer",
+    "price": 500,
+    "description": "Werk of school, alles kan met deze moderne computer",
+    "imageUrl": "https://images.unsplash.com/photo-1532799118157-9fef52fdbc5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "category": "Gaming"
+  }
+  ,
+  {
+    "name": "Retro Gamboy",
+    "price": 300,
+    "description": "Speel spellen met de meest indrukwekkende graphics",
+    "imageUrl": "https://images.unsplash.com/photo-1599336008464-99ad92a4c84c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+    "category": "Gaming"
+  },
+  {
+    "name": "Retro Radio",
+    "price": 80,
+    "description":
+      "Luister muziek in de mooiste kwaliteit geluid, voelbare bas en prettige hoge tonen",
+    "imageUrl": "https://images.unsplash.com/photo-1604838577951-fc3334039881?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074",
+    "category": "Audio"
+  },
+  {
+    "name": "Retro PlatenSpeler",
+    "price": 120,
+    "description":
+      "Luister je toch liever je eigen muziek, ook hier dezelfde geluidskwaliteit van onze bekende radio",
+    "imageUrl": "https://images.unsplash.com/photo-1558584673-b3f73685d37f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074",
+    "category": "Audio"
+  },
+  {
+    "name": "Retro Walkman",
+    "price": 60,
+    "description":
+      "Nog steeds niet uitgeluisterd, nu ook voor onderweg, en ook hier dezelfe geluidskwaliteit van onze bekende radio en platenspeler",
+    "imageUrl": "https://images.unsplash.com/photo-1611001716885-b3402558a62b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170",
+    "category": "Audio"
+  },
+  {
+    "name": "Retro WalkieTalkie",
+    "price": 150,
+    "description": "Blijf de ganse tijd praten met elkaar tijdens elke opdracht",
+    "imageUrl": "https://images.unsplash.com/photo-1631611114024-b1b34e724c4e?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170",
+    "category": "Communication"
+  },
+  {
+    "name": "Retro Telefoon",
+    "price": 300,
+    "description":
+      "Kan je niet bij elkaar zijn, maar elkaar toch niet missen, dan is onze telefoon die altijd goed op het oor past het antwoord",
+    "imageUrl": "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170",
+    "category": "Communication"
+  }
+]
