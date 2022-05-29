@@ -9,7 +9,7 @@ import {
 import { auth } from "../config/firebase";
 
 const useAuth = () => {
-  const [User, setUser] = useState(null);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const subscription = onAuthStateChanged(auth, (user) => {

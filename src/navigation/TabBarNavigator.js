@@ -51,7 +51,8 @@ const TabBarNavigator = () => {
         name="Profiel"
         component={ProfileScreen}
         options={{
-          headerShown: false,
+          headerStyle: { backgroundColor: "darkblue" },
+          headerTintColor: "white",
           tabBarIcon: ({ size, color }) => (
             <Feather size={size} color={color} name="user" />
           ),

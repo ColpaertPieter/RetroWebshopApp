@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import TabBarNavigator from "./TabBarNavigator";
 import AuthStackNavigator from "./AuthStackNavigator";
 import { useDispatch, useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../config/firebase"
 import {
   setAuthenticatedFalse,
   setAuthenticatedTrue,

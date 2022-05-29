@@ -1,12 +1,43 @@
-import { StyleSheet, Text, View, Image } from "react-native";
-import React from "react";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { FlatList, TouchableOpacity } from "react-native-gesture-handler";
+import { FlatList } from "react-native-gesture-handler";
+import { Input } from "react-native-elements";
 
 const ProductScreen = (props) => {
   const { navigation } = props;
 
+  const [search, setSearch] = useState("");
+  const [filteredDataSource, setFilteredDataSource] = useState([]);
+  const [masterDataSource, setMasterDataSource] = useState([]);
+
   const products = require("../../assets/Products/Product.json");
+
+  useEffect(() => {
+    setFilteredDataSource(products);
+    setMasterDataSource(products);
+  }, []);
+
+  const searchFilter = (text) => {
+    // Check if searched text is not blank
+    if (text) {
+      // Inserted text is not blank
+      // Filter the masterDataSource and update FilteredDataSource
+      const newData = masterDataSource.filter(function (item) {
+        // Applying filter for the inserted text in search bar
+        const itemData = item.name ? item.name.toUpperCase() : "".toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+      setFilteredDataSource(newData);
+      setSearch(text);
+    } else {
+      // Inserted text is blank
+      // Update FilteredDataSource with masterDataSource
+      setFilteredDataSource(masterDataSource);
+      setSearch(text);
+    }
+  };
 
   const renderItem = ({ item }) => {
     return (
@@ -28,8 +59,18 @@ const ProductScreen = (props) => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Input
+        style={styles.searhInput}
+        placeholder="Zoek hier..."
+        onChangeText={(text) => searchFilter(text)}
+        inputContainerStyle={{
+          borderWidth: 0,
+          borderColor: "transparent",
+          height: 0,
+        }}
+      />
       <FlatList
-        data={products}
+        data={filteredDataSource}
         keyExtractor={(item) => item.name}
         renderItem={renderItem}
       />
@@ -42,6 +83,11 @@ export default ProductScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  searhInput: {
+    paddingLeft: 10,
+    borderWidth: 1,
+    borderRadius: 5,
   },
   productContainer: {
     borderWidth: 1,

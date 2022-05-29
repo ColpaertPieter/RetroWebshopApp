@@ -46,10 +46,11 @@ const ConfirmScreen = () => {
     },
     validationSchema: validationSchema,
   });
+  const makeOrder = () => {};
 
   return (
     <KeyboardAvoidingView
-      keyboardVerticalOffset={50}
+      keyboardVerticalOffset={200}
       style={styles.container}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
@@ -134,7 +135,11 @@ const ConfirmScreen = () => {
               borderColor: "transparent",
             }}
           />
-          <Button title="Bevestigen" />
+          <Button
+            buttonStyle={styles.button}
+            title="Bevestigen"
+            onPress={() => makeOrder()}
+          />
         </View>
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
@@ -148,8 +153,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   inputView: {
-    flex: 1,
-    padding: 10,
     justifyContent: "space-around",
   },
   input: {
@@ -157,5 +160,8 @@ const styles = StyleSheet.create({
     padding: 10,
     borderWidth: 1,
     marginTop: 10,
+  },
+  button: {
+    backgroundColor: "green",
   },
 });
