@@ -66,7 +66,8 @@ const ProductScreen = (props) => {
         inputContainerStyle={{
           borderWidth: 0,
           borderColor: "transparent",
-          height: 0,
+          // adding height makes the button not work on android for some reason
+          // height: 0,
         }}
       />
       <FlatList

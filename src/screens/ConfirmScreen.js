@@ -13,6 +13,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigation } from "@react-navigation/native";
 
+
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("Voor- en achternaam zijn verplicht"),
   email: Yup.string()
@@ -34,7 +35,7 @@ const ConfirmScreen = () => {
   const houseNumberRef = useRef(null);
   const zipCodeRef = useRef(null);
   const cityRef = useRef(null);
-
+ 
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -45,12 +46,14 @@ const ConfirmScreen = () => {
       city: "",
     },
     validationSchema: validationSchema,
+    onSubmit: (values) => {
+      navigation.navigate("Bevestiging")
+    },
   });
-  const makeOrder = () => {};
 
   return (
     <KeyboardAvoidingView
-      keyboardVerticalOffset={200}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 50 : 200}
       style={styles.container}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
@@ -79,6 +82,7 @@ const ConfirmScreen = () => {
             onSubmitEditing={() => streetRef.current.focus()}
             returnKeyType="next"
             keyboardType="email-address"
+            autoCapitalize="none"
             inputContainerStyle={{
               borderWidth: 0,
               borderColor: "transparent",
@@ -86,6 +90,7 @@ const ConfirmScreen = () => {
           />
           <Input
             style={styles.input}
+            ref={streetRef}
             placeholder="Straat"
             value={formik.values.street}
             onChangeText={formik.handleChange("street")}
@@ -99,6 +104,7 @@ const ConfirmScreen = () => {
           />
           <Input
             style={styles.input}
+            ref={houseNumberRef}
             placeholder="Huisnummer"
             value={formik.values.houseNumber}
             onChangeText={formik.handleChange("houseNumber")}
@@ -112,6 +118,7 @@ const ConfirmScreen = () => {
           />
           <Input
             style={styles.input}
+            ref={zipCodeRef}
             placeholder="Postcode"
             value={formik.values.zipCode}
             onChangeText={formik.handleChange("zipCode")}
@@ -126,6 +133,7 @@ const ConfirmScreen = () => {
           />
           <Input
             style={styles.input}
+            ref={cityRef}
             placeholder="Gemeente"
             value={formik.values.city}
             onChangeText={formik.handleChange("city")}
@@ -138,7 +146,7 @@ const ConfirmScreen = () => {
           <Button
             buttonStyle={styles.button}
             title="Bevestigen"
-            onPress={() => makeOrder()}
+            onPress={formik.handleSubmit}
           />
         </View>
       </TouchableWithoutFeedback>
