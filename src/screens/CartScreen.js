@@ -1,8 +1,13 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from "react-native";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { removeProduct, getTotalPrice } from "../../store/cart/slice";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -97,8 +102,8 @@ const styles = StyleSheet.create({
     bottom: 5,
   },
   total: {
-    fontFamily: 'roboto-bold',
-    fontSize:22,
+    fontFamily: "roboto-bold",
+    fontSize: 22,
     textAlign: "right",
     margin: 5,
   },

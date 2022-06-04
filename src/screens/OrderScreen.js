@@ -3,14 +3,16 @@ import React from "react";
 import useAuth from "../../hooks/useAuth";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
+import { reset } from "../../store/cart/slice";
 
 const OrderScreen = () => {
   const { user } = useAuth();
   const cartstate = useSelector((state) => state.cart);
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   const cartItem = ({ item }) => {
     return (
@@ -43,7 +45,10 @@ const OrderScreen = () => {
       <Button
         title="Ok"
         buttonStyle={styles.button}
-        onPress={() => navigation.navigate("ProductenLijst")}
+        onPress={() => {
+          navigation.navigate("ProductenLijst");
+          dispatch(reset());
+        }}
       />
     </View>
   );
